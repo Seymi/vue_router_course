@@ -1,4 +1,5 @@
 <template>
+  <div>
     <section class="destination">
       <route-button :routeDestination="{route: '/', text: '', icon: 'fa fa-home'}"></route-button>
       <route-button :routeDestination="{route: 'back()', text: 'zurück' }"></route-button>
@@ -20,8 +21,11 @@
           <experience-card :experience="experience"></experience-card>
         </router-link>
       </div>
+
       <router-view></router-view>
+
     </section>
+  </div>
 </template>
 
 <script>

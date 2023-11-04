@@ -1,13 +1,15 @@
 <template>
-  <section>
-      <div class="route-buttons">
-        <route-button :routeDestination="{route: '/', text: '', icon: 'fa fa-home'}"></route-button>
-        <route-button :routeDestination="{route: 'back()', text: 'zurück' }"></route-button>
-      </div>
-      <h1>{{ experience.name }}</h1>
-      <img :src="`images/${experience.image}`" :alt="experience.name">
-      <p>{{ experience.description }}</p>
-  </section>
+  <div>
+    <section>
+        <div class="route-buttons">
+          <route-button :routeDestination="{route: '/', text: '', icon: 'fa fa-home'}"></route-button>
+          <route-button :routeDestination="{route: 'back()', text: 'zurück' }"></route-button>
+        </div>
+        <h1>{{ experience.name }}</h1>
+        <img :src="`images/${experience.image}`" :alt="experience.name">
+        <p>{{ experience.description }}</p>
+    </section>
+  </div>
 </template>
 
 

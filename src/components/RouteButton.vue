@@ -1,8 +1,8 @@
 <template>
-    <span class="route-buttons">
+    <div class="route-buttons">
         <button v-if="routeDestination.route === 'back()'" @click="$router.back()">{{routeDestination.text}}</button>
         <button v-if="routeDestination.route !== 'back()'" @click="$router.push(routeDestination.route)">{{routeDestination.text}}<i v-if="routeDestination.icon" class="fa fa-home"></i></button>
-    </span>
+    </div>
 </template>
 
 <script>

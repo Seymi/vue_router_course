@@ -163,7 +163,9 @@ a {
   justify-content: space-between;
 }
 
+
 .route-buttons {
+  display: inline;
   margin-bottom: 10px;
   margin-left: 5px;
 }
@@ -190,4 +192,35 @@ a {
   padding: 10px;
   border-radius: 5px;
   border:none;
+}
+
+
+/* added */
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
