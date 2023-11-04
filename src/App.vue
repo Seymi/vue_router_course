@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <the-navigation></the-navigation>
-    <router-view></router-view>
+    <router-view :key="$route.path"></router-view>
   </div>
 </template>
 

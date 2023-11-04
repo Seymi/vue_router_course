@@ -1,5 +1,7 @@
 <template>
     <section class="destination">
+      <route-button :routeDestination="{route: '/', text: '', icon: 'fa fa-home'}"></route-button>
+      <route-button :routeDestination="{route: 'back()', text: 'zurück' }"></route-button>
       <h1>{{ destination.name }}</h1>
       <div class="destination-details">
         <img :src="`images/${destination.image}`" :alt="destination.name">
@@ -18,15 +20,16 @@
           <experience-card :experience="experience"></experience-card>
         </router-link>
       </div>
+      <router-view></router-view>
     </section>
 </template>
 
 <script>
   import sourceData from '@/data.json';
   import ExperienceCard from '@/components/ExperienceCard.vue';
-
+  import RouteButton from '../components/RouteButton.vue';
   export default {
-    components: { ExperienceCard },
+    components: { ExperienceCard, RouteButton },
     props: {
       id: {type: Number, required: true}
     },
