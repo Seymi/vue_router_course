@@ -1,0 +1,15 @@
+{
+    "users": [
+        {
+            "userId": 1,
+            "userName": "Seymi",
+            "userFirstName": "Martin",
+            "userFamilyName" : "Seymann",
+            "userEmailAdress": "martin.seymann@chello.at",
+            "userAdressPlz": "1020",
+            "userAdressCity": "Wien",
+            "userAdressStreet": "Praterstraße",
+            "userAdressStreetnumber": "42/1/4"
+        }
+    ]
+}

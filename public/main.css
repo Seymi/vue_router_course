@@ -197,6 +197,10 @@ a {
 
 /* added */
 
+.external-link {
+  font-style: oblique;
+}
+
 .topnav-centered a {
   float: none;
   position: absolute;
