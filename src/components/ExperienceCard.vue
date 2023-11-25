@@ -9,7 +9,7 @@
 
 
 <script>
-  import sourceData from '@/data.json';
+  //import sourceData from '@/data.json';
   export default {
     props: {
       experience: { type: Object, required: true }

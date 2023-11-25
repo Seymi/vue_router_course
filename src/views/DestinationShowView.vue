@@ -10,16 +10,18 @@
       </div>
     </section>
 
+    <!-- eslint-disable vue/no-multiple-template-root -->
+
     <section class="experiences">
       <h2>Top Experiences in {{ destination.name }}</h2>
       <div class="cards">
-        <router-link
+        <AppLink
           v-for="experience in destination.experiences"
           :key="experience.slug"
           :to="{name: 'experience.show', params: { experienceSlug: experience.slug } }"
         >
           <experience-card :experience="experience"></experience-card>
-        </router-link>
+        </AppLink>
       </div>
 
       <router-view></router-view>

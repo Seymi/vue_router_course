@@ -20,7 +20,7 @@
 import userProfile from '@/user_profile.json';
 
 export default {
-    components: { userProfile },
+    //components: { userProfile },
     props: {
         userId: { type: Number, required: true }
     },

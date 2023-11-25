@@ -5,7 +5,7 @@
             <label for="username">Username</label>
             <input v-model="username.value" name="username" type="text" class="input">
             <label for="password">Passwort</label>
-            <input v-model="password" name="password" type="password" class="input">
+            <input v-model="password.value" name="password" type="password" class="input">
 
             <button class="btn">Login</button>
         </form>

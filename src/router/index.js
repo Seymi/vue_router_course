@@ -1,8 +1,8 @@
 //import { createRouter, createWebHistory } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+//import HomeView from '../views/HomeView.vue'
 import sourceData from '@/data.json'
-import DestinationShowView from '../views/DestinationShowView.vue'
+//import DestinationShowView from '../views/DestinationShowView.vue'
 
 
 //window.user = 'seymi';
@@ -10,7 +10,13 @@ import DestinationShowView from '../views/DestinationShowView.vue'
 let pageTitle = 'Meine Foto App';
 
 const routes = [
-  { path: '/', name: 'home', component: HomeView, meta: { pageSubtitle: 'Start'} },
+  {
+    path: '/',
+    name: 'Home',
+    meta: { pageSubtitle: 'Start' },
+    component: ()=> import('@/views/HomeView.vue'),
+  },
+
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
@@ -93,7 +99,8 @@ const router = createRouter({
   }
 });
 
-router.beforeEach(async (toRoute, from) => {
+// eslint-disable-next-line no-unused-vars
+router.beforeEach(async (toRoute, _from) => {
   if ( toRoute.meta.authRequired && !window.user ) {
     return {
       name: 'userLogin',

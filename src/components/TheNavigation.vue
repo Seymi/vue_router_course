@@ -7,25 +7,25 @@
             :to="{name: 'destination.show', params: { id: destination.id, slug: destination.slug }}"
         > {{  destination.name }}
         </AppLink>
-        <AppLink v-if="userLoggedIn" :to="{name: 'protected'}">Dashbord</AppLink>
-        <AppLink v-if="userLoggedIn" :to="{name: 'invoices'}">Invoices</AppLink>
-        <AppLink v-if="!userLoggedIn" :to="{name: 'userLogin'}">Login</AppLink>
+        <AppLink v-model="this.isUserLoggedIn" v-if="this.isUserLoggedIn()" :to="{name: 'protected'}">Dashbord</AppLink>
+        <AppLink v-bind="this.isUserLoggedIn" v-if="this.isUserLoggedIn()" :to="{name: 'invoices'}">Invoices</AppLink>
+        <AppLink v-if="!this.isUserLoggedIn()" :to="{name: 'userLogin'}">Login</AppLink>
 
-        <AppLink to="http://seymi.at">Seymi</AppLink>
+        <AppLink to="http://vuejs.org">vue.js</AppLink>
 
     </div>
 </template>
 
 <script>
     import sourceData from '@/data.json';
+    //import {ref} from 'vue';
     //import AppLink from '@/components/AppLink.vue';
 
     export default {
-        //components: {AppLink},
         data() {
             return {
                 destinations: sourceData.destinations,
-                userLoggedIn: this.isUserLoggedIn()
+                userLoggedIn: false
             }
         },
         methods: {
@@ -34,7 +34,8 @@
                     this.userLoggedIn = true;
                 } else {
                     this.userLoggedIn = false;
-                }
+                };
+                console.log('user logged in: ', this.userLoggedIn);
                 return this.userLoggedIn;
             }
         }
